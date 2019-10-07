@@ -25,7 +25,6 @@ export TAG
 # Tag this version
 TAG=${TAG//+/-}
 git tag "v${TAG}"
-git tag -l
 git push -q "https://${GITHUB_KEY}@github.com/${TRAVIS_REPO_SLUG}" --tags
 f_success_log "Code taged with version v${TAG}"
 
