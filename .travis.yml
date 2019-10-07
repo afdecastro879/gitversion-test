@@ -24,7 +24,7 @@ jobs:
         provider: releases
         api_key: ${GITHUB_KEY}
         on:
-          condition: NOT ($TRAVIS_TAG =~ ^.*-rfv\.[0-9]+$)
+          condition: !($TRAVIS_TAG =~ ^.*-rfv\.[0-9]+$)
 env:
   global:
   - secure: "qmQLk2K/LGlzaChnsj7VbPDXbtMTY+ztIQ2mY618yrkqPSKO2QTUnkgy2kn8KUAvMVSLhQhU+bXCvpGTtrhWt8YhaSnDgQZqyLxDPFV3BHNatD0E1h8gc48gCBovXVhusp1Uv/2t5HRtklUAeR7NpkCI6g9Njjb+bwIiidmNbaeHaC+DnzGyHfM/Bp6pWRJ4ojs53ZGgq3KaGfOcQL0xw9olHmxSOG2ULZ1DLjDA4bK8rTyI+1CWqGR1PGhVARHVF6r3vg7FrHPmu1P9AVbVFCj2/KWsy9zBPT/uwp9YWpTry+MHyWfbbznsZWe47Mzx6X2+/Vw+Sl2M8FJjTDZ6Sy1poA6CM9OLyGlZEO3qoSZQJq8UqgvSElrflp+c3LfYUGZyW3weustIkbhSJvlBChSbHEQLu5wSn5845YPHjbnRDmheIG4xVCMQboifSphC2qBBVinj0ka7+xG55t4x2+gUfTG7Oxxbqjy+ZKL6AI3W4PiupoNBLKpUbjcLveyfCecdL92J+68/NKUSKk/EmNhq0qXHmuu04lZcXN0gBmlHabtlaLjLbs4TnQOSkupT853/lbZrgd+ZRWENTgO0GncCG61AL+rxjYodAnYxCXh31RiBC/idNzCtc0o6XFMwqYO6muqvaZDz9frHW8VmlvELEOfvryXd2ykDPfnYeT8="
