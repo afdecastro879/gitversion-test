@@ -17,6 +17,7 @@ jobs:
       script:
           - "./bin/ci/tag_code.sh"
     - stage: Tagged build
+      if: tag IS present
       install: skip
       script: echo Executing tagged build
 deploy:
