@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -e
+
 DIR="$(dirname "$0")"
 source "${DIR}/include.sh"
 
