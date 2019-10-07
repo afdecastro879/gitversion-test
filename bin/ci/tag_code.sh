@@ -15,7 +15,9 @@ elif [[ "${TRAVIS_BRANCH}" = "master" ]]
 then
     TAG=$(docker run --rm -v "$(pwd):/repo" gittools/gitversion:5.0.0-linux-debian-9-netcoreapp2.2 /repo -output json -showvariable MajorMinorPatch)
     # Remove all old rfv tags
-    git push -q "https://${GITHUB_KEY}@github.com/${TRAVIS_REPO_SLUG}" -d origin $(git tag -l "*-rfv.*")
+    git tag -l "*-rfv.*"
+    git fetch
+    git push -q "https://${GITHUB_KEY}@github.com/${TRAVIS_REPO_SLUG}" --delete origin $(git tag -l "*-rfv.*")
 fi
 
 export TAG
