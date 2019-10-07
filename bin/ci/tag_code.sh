@@ -17,7 +17,7 @@ then
     # Remove all old rfv tags
     git tag -l "*-rfv.*"
     git fetch
-    git push -q "https://${GITHUB_KEY}@github.com/${TRAVIS_REPO_SLUG}" --delete origin $(git tag -l "*-rfv.*")
+    git push -q "https://${GITHUB_KEY}@github.com/${TRAVIS_REPO_SLUG}" --delete $(git tag -l "*-rfv.*")
 fi
 
 export TAG
@@ -25,4 +25,5 @@ export TAG
 TAG=${TAG//+/-}
 git tag "v${TAG}"
 git push -q "https://${GITHUB_KEY}@github.com/${TRAVIS_REPO_SLUG}" --tags
+f_success_log "Code tag with version v${TAG}"
 
