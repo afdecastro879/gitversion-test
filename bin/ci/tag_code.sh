@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+set -e
 DIR="$(dirname "$0")"
 source "${DIR}/include.sh"
 
@@ -17,6 +17,7 @@ then
     # Remove all old rfv tags
     git tag -l "*-rfv.*"
     git fetch
+    echo "git push -q \"https://${GITHUB_KEY}@github.com/${TRAVIS_REPO_SLUG}\" --delete $(git tag -l \"*-rfv.*\")"
     git push -q "https://${GITHUB_KEY}@github.com/${TRAVIS_REPO_SLUG}" --delete $(git tag -l "*-rfv.*")
 fi
 
